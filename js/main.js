@@ -7,9 +7,11 @@ window.onload = () => {
   }
 }
 
-document.body.addEventListener('keyup', log);
-document.body.addEventListener('keydown', log);
-document.body.addEventListener('keypress', log);
+window.addEventListener('keyup', log);
+window.addEventListener('keydown', log);
+window.addEventListener('keypress', log);
+
+navigator.keyboard.lock().then(() => {console.log('keyboard locked');});
 
 function log(evt) {
   let log = document.getElementById('log');
